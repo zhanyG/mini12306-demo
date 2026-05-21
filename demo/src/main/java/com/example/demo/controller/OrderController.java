@@ -15,7 +15,7 @@ public class OrderController {
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }
-
+    ..
     @PostMapping("/buy")
     public Order buyTicket(
             @RequestParam Long userId,

@@ -32,6 +32,13 @@ public class DataService {
         trains.add(t1);
     }
 
+    public User getUserByUsername(String username) {
+        return users.stream()
+                .filter(u -> username.equals(u.getUsername()))
+                .findFirst()
+                .orElse(null);
+    }
+
     // Getters（供Controller调用）
     public List<User> getUsers() { return users; }
     public List<Train> getTrains() { return trains; }
