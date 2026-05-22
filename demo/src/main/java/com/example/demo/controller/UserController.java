@@ -24,9 +24,7 @@ public class UserController {
         if (user.getUsername() == null || user.getUsername().isBlank()) {
             throw new RuntimeException("用户名不能为空");
         }
-        user.setId(dataService.nextUserId());
-        dataService.saveUser(user);
-        return user;
+        return dataService.saveUser(user);
     }
 
     @GetMapping("/{id}")

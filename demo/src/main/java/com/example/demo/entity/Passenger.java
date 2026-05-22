@@ -1,14 +1,28 @@
 package com.example.demo.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-import java.time.LocalDate;
+import lombok.NoArgsConstructor;
 
+@Entity
+@Table(name = "passengers")
 @Data
+@NoArgsConstructor
 public class Passenger {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "user_id")
     private Long userId;
+
+    @Column(name = "name", length = 50)
     private String name;
+
+    @Column(name = "id_card", length = 18)
     private String idCard;
+
+    @Column(name = "phone", length = 20)
     private String phone;
 
     public Passenger(Long userId, String name, String idCard) {
