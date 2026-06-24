@@ -5,6 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
+/**
+ * 车次实体，映射 trains 表。
+ * 每趟车次包含基础信息（车号、起止站、时间、价格）和座位库存（总座位数、余票数）。
+ */
 @Entity
 @Table(name = "trains")
 @Data
@@ -48,6 +52,10 @@ public class Train {
         this.price = price;
     }
 
+    /**
+     * 尝试预订一个座位（扣减余票）。
+     * @return 有余票时 true，售罄时 false
+     */
     public boolean bookSeat() {
         if (availableSeats > 0) {
             availableSeats--;
@@ -56,6 +64,9 @@ public class Train {
         return false;
     }
 
+    /**
+     * 退还一个座位（退票时释放余票，上限不超过总座位数）。
+     */
     public void refundSeat() {
         if (availableSeats < totalSeats) availableSeats++;
     }

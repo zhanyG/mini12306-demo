@@ -1,0 +1,53 @@
+:root {
+  --primary: #ee0a24;
+  --primary-light: #fff1f0;
+  --text: #323233;
+  --text-secondary: #969799;
+  --bg: #f7f8fa;
+  --border: #ebedf0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1a1a1a;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  max-width: 390px;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg);
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* 让底部导航栏与手机框架对齐 */
+.van-tabbar--fixed {
+  max-width: 390px !important;
+  width: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  right: auto !important;
+}
+
+.page {
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 16px 16px 12px;
+  margin: 0;
+}
+
+/* Toast 样式覆盖 */
+.van-toast {
+  z-index: 9999;
+}
